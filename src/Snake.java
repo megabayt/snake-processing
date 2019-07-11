@@ -18,6 +18,12 @@ public class Snake {
     }
 
     void setSpeed(int x, int y) {
+        if ((x == 1 && vx == -cellW)
+            || (x == -1 && vx == cellW)
+            || (y == 1 && vy == -cellW)
+            || (y == -1 && vy == cellW)) {
+            return;
+        }
         vy = y < 0 ? -cellW : y > 0 ? cellW : 0;
         vx = x < 0 ? -cellW : x > 0 ? cellW : 0;
     }

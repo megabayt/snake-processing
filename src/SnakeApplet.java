@@ -57,7 +57,9 @@ public class SnakeApplet extends PApplet {
         if (gameStarted) {
             if (food == null) {
                 int x = floor(random(0, w / cellW)) * cellW - cellW / 2;
+                x = x < 0 ? cellW / 2 : x;
                 int y = floor(random(0, h / cellW)) * cellW - cellW / 2;
+                y = y < 0 ? cellW / 2 : y;
                 food = new Food(x, y, cellW);
             }
             fill(255, 0, 0);
